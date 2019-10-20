@@ -1,0 +1,32 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= summonerName %></p>
+
+
+
+<p class="lead mb-3">Your rank: <%= tier %> <%= rank %></p>
+<p class="lead mb-3">League Points: <%= LP %></p>
+<p class="lead mb-3">Wins: <%= wins %></p>
+<p class="lead mb-3">Losses: <%= losses %></p>
+<p class="lead mb-3">winrate: %<%= ((wins/(losses + wins))*100).toFixed(2) %></p>
+<p class="lead mb-3">Highest Mastery:  <%= high_mastery[0] %> Mastery Points: <%= mastery_points %> </p>
+
+
+
+<p class="lead mb-3">Previous Match: <%= last_played[0] %> <%= summoner_info_championId[0].role %>
+     <%= summoner_info_championId[0].lane %><br> OutCome: <%= outcome %> <br> Side: <%= side %></p>
+     <p class ="lead mb-3">Blue Side</p>
+    <% redside.forEach(function(player) { %>
+        <%= player %>
+        <br>
+    <% }); %>
+    <br>
+
+    <p class ="lead mb-3">Red Side</p>
+    <% blueside.forEach(function(player) { %>
+        <%= player %>
+        <br>
+    <% }); %>
+
+
+
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
